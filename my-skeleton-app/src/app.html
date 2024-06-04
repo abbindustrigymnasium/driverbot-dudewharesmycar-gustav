@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/appicon.jpg" />
+    <meta name="viewport" content="width=device-width" />
+    %sveltekit.head%
+    <style>
+        /* Html */
+        body {
+            background-color: #000; /* Set dark background */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .right-Faded-Black {
+            position: fixed;
+            top: 0;
+            left: 60%;
+            width: 2%; /* Width of the dark section */
+            height: 100%; /* Height of the viewport */
+            background-color: rgba(0, 0, 0, 0.718); /* Dark color */
+            z-index: -1; /* Place the drak section behind other content */
+        }
+        .right-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 60%; /* Adjusted width to cover 60% of viewport */
+            height: 100%; /* Height of the viewport */
+            background-color: rgb(0, 0, 0); /* Black color */
+            z-index: -1; 
+        }
+        .content {
+            margin-left: 0%; /* Shift content to the right */
+            height: 100%; /* Height of the viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body data-sveltekit-preload-data="hover" data-theme="rocket">
+    <div class="right-Faded-Black"></div> <!-- Orange section -->
+    <div class="right-screen"></div> <!-- Right screen -->
+    <div class="content">
+        <div style="display: contents" class="h-full overflow-hidden">%sveltekit.body%</div>
+        <!-- Includes img -->
+        <img src="Orange-Moutain.jpg" style="position: fixed; top: -1px; right: 0; height: 130vh; z-index: -3;" alt="Background Image">
+        <img src="Car.png" style="position: fixed; top: 30%; right: 60%; height: 50vh; z-index: 2;" alt="Background Image">
+    </div>
+</body>
+</html>
